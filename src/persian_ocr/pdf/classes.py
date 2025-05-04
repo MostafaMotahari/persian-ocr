@@ -105,7 +105,7 @@ class PDFUploader(BaseCase):
                 self.wait_for_element_clickable(a_selector, timeout=15)
                 self.click(a_selector)
 
-                self.assert_downloaded_file("report.pdf")
+                self.assert_downloaded_file("pdf2text.zip")
                 downloaded_file_path = self.rename_download_to_original(file_path)
                 downloaded_files.append(downloaded_file_path)
 
@@ -117,7 +117,12 @@ class PDFUploader(BaseCase):
 
     def rename_download_to_original(self, original_file_path: str):
         original_filename = os.path.basename(original_file_path)
+        original_prefix = os.path.splitext(original_filename)[0]
+
         downloaded_path = self.get_latest_download_file(timeout=self.timeout)
-        renamed_path = os.path.join(self.get_downloads_path(), original_filename)
+        downloaded_filename = os.path.basename(downloaded_path)
+        downloaded_postfix = os.path.splitext(downloaded_filename)[1]
+
+        renamed_path = os.path.join(self.get_downloads_path(), f"{original_prefix}{downloaded_postfix}")
         os.rename(downloaded_path, renamed_path)
         return renamed_path
