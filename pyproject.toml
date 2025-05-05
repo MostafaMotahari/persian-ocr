@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -19,4 +19,11 @@ Homepage = "https://github.com/MostafaMotahari/persian-ocr"
 Repository = "https://github.com/MostafaMotahari/persian-ocr"
 
 [tool.setuptools.packages.find]
-where = []
+where = ["."]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Linguistic",
+]
