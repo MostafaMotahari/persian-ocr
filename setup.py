@@ -8,7 +8,7 @@ setup(
     author_email="mostafamotahari2004@gmail.com",
     license="Apache",
     packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    package_dir={"": "."},
     install_requires=["seleniumbase>=4.38.0"],
     python_requires=">=3.7",
     classifiers=[

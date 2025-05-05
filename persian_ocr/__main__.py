@@ -1,5 +1,9 @@
 import argparse
+import logging
 from persian_ocr import PDFUploader
+
+LOGGER = logging.getLogger('persian_ocr')
+
 
 def help_command():
     print("📘 General Help")
@@ -86,7 +90,10 @@ def main():
 
     uploader = PDFUploader(file=args.file, dir=args.dir, timeout=args.timeout, browser=args.browser, headless=args.headless)
     processed_files = uploader.upload_and_process()
-    print(processed_files)
+    if processed_files:
+        LOGGER.info(f"These files downloaded successfully: {', '.join(processed_files)}")
+    else:
+        LOGGER.warning("No file downloaded")
 
 
 if __name__ == "__main__":

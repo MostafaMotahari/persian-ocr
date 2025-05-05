@@ -19,17 +19,7 @@ Homepage = "https://github.com/MostafaMotahari/persian-ocr"
 Repository = "https://github.com/MostafaMotahari/persian-ocr"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = {"" = "."}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[project.classifiers]
-Programming Language :: Python :: 3
-Programming Language :: Python :: 3.7
-Programming Language :: Python :: 3.8
-Programming Language :: Python :: 3.9
-License :: OSI Approved :: Apache License
-Operating System :: OS Independent
-Intended Audience :: Developers
-Intended Audience :: Education
