@@ -10,9 +10,7 @@ readme = "README.md"
 license = {file = "LICENSE"}
 authors = [{ name = "Mostafa Motahari", email = "mostafamotahari2004@gmail.com" }]
 dependencies = ["seleniumbase>=4.38.0"]
-
 keywords = ["OCR", "Persian", "PDF", "image to text", "selenium"]
-python_requires = ">=3.7"
 
 [project.urls]
 Homepage = "https://github.com/MostafaMotahari/persian-ocr"
@@ -20,6 +18,9 @@ Repository = "https://github.com/MostafaMotahari/persian-ocr"
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[tool.setuptools]
+python_requires = ">=3.7"
 
 classifiers = [
     "Programming Language :: Python :: 3",
